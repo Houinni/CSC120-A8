@@ -5,9 +5,9 @@
 public class Superhero implements Contract {
     
     private String name;
-    private int size; // size factor representing the superhero's size level
-    private int xPosition; // x-coordinate position
-    private int yPosition; // y-coordinate position
+    private int size; 
+    private int xPosition; 
+    private int yPosition; 
     
     /**
      * Constructor to initialize the superhero with a name.
@@ -68,13 +68,19 @@ public class Superhero implements Contract {
         System.out.println(name + " walks towards the " + direction + ".");
         return true;
     }
-
     /**
-     * Fly to a specified (x, y) coordinate.
+     * walks to a specified (x, y) coordinate.
      * @param x the x-coordinate
      * @param y the y-coordinate
-     * @return true if flying was successful
+     * @return true if walking was successful
      */
+    public boolean walk(int x, int y) {
+        System.out.println(name + " walks to coordinates (" + x + ", " + y + ").");
+        this.xPosition = x;
+        this.yPosition = y;
+        return true;
+    }
+    
     @Override
     public boolean fly(int x, int y) {
         System.out.println(name + " flies to coordinates (" + x + ", " + y + ").");
@@ -93,7 +99,16 @@ public class Superhero implements Contract {
         System.out.println(name + " shrinks to size " + size + ".");
         return size;
     }
-
+    /**
+     * Shrinks the superhero by a specified number of units.
+     * @param x the number of units to shrink
+     * @return the new size after shrinking
+     */
+    public Number shrink(int x) {
+        size-=x;
+        System.out.println(name + " shrinks to size " + size + ".");
+        return size;
+    }
     /**
      * Grow the superhero.
      * @return the new size after growing
@@ -104,7 +119,16 @@ public class Superhero implements Contract {
         System.out.println(name + " grows to size " + size + ".");
         return size;
     }
-
+    /**
+     * Grows the superhero by a specified number of units.
+     * @param x the number of units to grow
+     * @return the new size after growing
+     */
+    public Number grow(int x) {
+        size+=x;
+        System.out.println(name + " grows to size " + size + ".");
+        return size;
+    }
     /**
      * Rest to regain strength.
      */

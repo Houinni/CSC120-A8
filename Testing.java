@@ -7,7 +7,7 @@ public class Testing {
     
     public static void main(String[] args) {
         // Create a new Superhero instance
-        Superhero hero = new Superhero("Captain Code");
+        Superhero hero = new Superhero("Spiderman");
         
         // Test grab method
         hero.grab("shield");
@@ -34,11 +34,15 @@ public class Testing {
         // Test shrink method
         Number newSize = hero.shrink();
         System.out.println("New size after shrinking: " + newSize);
-        
+        Number certainSize = hero.shrink(1);
+        System.out.println("New certain size after shrinking: " + certainSize);
+
         // Test grow method
         newSize = hero.grow();
         System.out.println("New size after growing: " + newSize);
-        
+        certainSize = hero.grow(1);
+        System.out.println("New size after growing: " + certainSize);
+
         // Test rest method
         hero.rest();
         
